@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Anand Hatmode | Cybersecurity Portfolio</title>
+<meta name="description" content="Anand Hatmode - B.Tech AI & Data Science student focused on web application security, vulnerability research, VAPT and SOC fundamentals. Seeking entry-level cybersecurity roles.">
+<meta name="keywords" content="Anand Hatmode, cybersecurity, SOC analyst, VAPT, application security, web security, bug bounty, OWASP, Burp Suite">
+<meta property="og:title" content="Anand Hatmode | Cybersecurity Portfolio">
+<meta property="og:description" content="Entry-level cybersecurity candidate: web application security, bug bounty research, VAPT and SOC fundamentals.">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#070B12">
+<style>
+/* ===== THEME (edit colours here) ===== */
+:root{--bg:#070B12;--card:#0E1623;--line:#1d2a3d;--accent:#49D6FF;--accent2:#8B5CF6;--text:#E8EEF7;--muted:#9AA7BA}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:70px}
+body{background:var(--bg);color:var(--text);font:16px/1.65 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+background-image:linear-gradient(rgba(73,214,255,.04) 1px,transparent 1px),linear-gradient(90deg,rgba(73,214,255,.04) 1px,transparent 1px);background-size:44px 44px}
+a{color:var(--accent)}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+.wrap{max-width:1080px;margin:0 auto;padding:0 22px}
+section{padding:80px 0}
+h2{font-size:1.9rem;margin-bottom:8px}
+h2::before{content:"// ";color:var(--accent2);font-family:ui-monospace,Consolas,monospace}
+.sub{color:var(--muted);margin-bottom:34px}
+.mono{font-family:ui-monospace,Consolas,monospace}
+/* NAV */
+header{position:sticky;top:0;z-index:20;background:rgba(7,11,18,.88);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+nav{display:flex;justify-content:space-between;align-items:center;height:62px}
+.logo{font-weight:700;text-decoration:none;color:var(--text)}
+.logo span{color:var(--accent)}
+.links{display:flex;gap:22px;list-style:none}
+.links a{color:var(--muted);text-decoration:none;font-size:.92rem;padding:6px 0;border-bottom:2px solid transparent}
+.links a:hover,.links a.active{color:var(--text);border-color:var(--accent)}
+.burger{display:none;background:none;border:1px solid var(--line);color:var(--text);padding:6px 12px;border-radius:8px;font-size:1.1rem;cursor:pointer}
+/* BUTTONS */
+.btn{display:inline-block;padding:11px 22px;border-radius:10px;text-decoration:none;font-weight:600;border:1px solid var(--accent);color:var(--accent);transition:.2s}
+.btn.primary{background:var(--accent);color:#04121a}
+.btn:hover{transform:translateY(-2px);box-shadow:0 6px 20px rgba(73,214,255,.2)}
+.btns{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
+/* HERO */
+#hero{padding:110px 0 90px}
+.tag{display:inline-block;border:1px solid var(--line);background:var(--card);padding:5px 12px;border-radius:99px;font-size:.82rem;color:var(--accent);margin-bottom:20px}
+#hero h1{font-size:clamp(2.4rem,6vw,4rem);line-height:1.1}
+#hero h1 em{font-style:normal;background:linear-gradient(90deg,var(--accent),var(--accent2));-webkit-background-clip:text;background-clip:text;color:transparent}
+.headline{font-size:1.2rem;color:var(--accent);margin:14px 0}
+.lead{max-width:640px;color:var(--muted)}
+.term{margin-top:36px;max-width:560px;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px 18px;font-size:.85rem;color:var(--muted)}
+.term b{color:var(--accent)}
+/* CARDS */
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:18px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:22px}
+.card h3{font-size:1.05rem;margin-bottom:10px}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{font-size:.8rem;padding:4px 10px;border-radius:99px;border:1px solid var(--line);background:#0a111b;color:var(--text)}
+.card ul{padding-left:18px;color:var(--muted)}
+.card li{margin:6px 0}
+.meta{color:var(--muted);font-size:.88rem;margin-bottom:10px}
+.badge{display:inline-block;font-size:.72rem;padding:2px 9px;border-radius:99px;background:rgba(139,92,246,.18);color:#c4b0ff;margin-bottom:10px}
+.two{display:grid;grid-template-columns:1.3fr 1fr;gap:28px}
+.stat{display:flex;flex-direction:column;gap:14px}
+.stat div{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px 18px}
+.stat b{display:block;color:var(--accent)}
+.note{font-size:.85rem;color:var(--muted);margin-top:18px}
+.ph{color:#ffcf6b;font-family:ui-monospace,Consolas,monospace}
+/* TIMELINE */
+.tl{border-left:2px solid var(--line);padding-left:24px}
+.tl .card{position:relative}
+.tl .card::before{content:"";position:absolute;left:-33px;top:28px;width:12px;height:12px;border-radius:50%;background:var(--accent)}
+footer{border-top:1px solid var(--line);padding:26px 0;text-align:center;color:var(--muted);font-size:.88rem}
+/* REVEAL */
+.reveal{opacity:0;transform:translateY(18px);transition:.6s}
+.reveal.in{opacity:1;transform:none}
+.nojs .reveal{opacity:1;transform:none}
+/* RESPONSIVE */
+@media(max-width:820px){
+.burger{display:block}
+.links{display:none;position:absolute;top:62px;left:0;right:0;flex-direction:column;gap:0;background:var(--bg);border-bottom:1px solid var(--line);padding:8px 22px}
+.links.open{display:flex}
+.links a{display:block;padding:12px 0}
+.two{grid-template-columns:1fr}
+section{padding:60px 0}
+}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.reveal{opacity:1;transform:none;transition:none}.btn{transition:none}}
+</style>
+</head>
+<body class="nojs">
+
+<!-- ===== NAVIGATION ===== -->
+<header>
+<div class="wrap"><nav aria-label="Main navigation">
+<a class="logo mono" href="#hero">anand<span>@</span>sec</a>
+<button class="burger" id="burger" aria-label="Toggle menu" aria-expanded="false" aria-controls="menu">&#9776;</button>
+<ul class="links" id="menu">
+<li><a href="#about">About</a></li><li><a href="#skills">Skills</a></li><li><a href="#projects">Projects</a></li>
+<li><a href="#research">Research</a></li><li><a href="#experience">Experience</a></li><li><a href="#education">Education</a></li>
+<li><a href="#certifications">Certifications</a></li><li><a href="#contact">Contact</a></li>
+</ul></nav></div>
+</header>
+
+<main>
+<!-- ===== HERO ===== -->
+<section id="hero"><div class="wrap">
+<span class="tag mono">Open to entry-level roles</span>
+<h1>Hi, I'm <em>Anand Hatmode</em></h1>
+<p class="headline mono">Web Application Security | VAPT | SOC Analyst | Network Eng</p>
+<p class="lead">Cybersecurity-focused B.Tech student (AI &amp; Data Science) who finds, validates, documents and responsibly reports web security vulnerabilities. Looking for entry-level SOC Analyst, VAPT, Application Security or Web Security roles.</p>
+<div class="btns">
+<a class="btn primary" href="#projects">View Projects</a>
+<a class="btn" href="#contact">Contact Me</a>
+</div>
+<div class="term mono"><b>$</b> whoami<br>anand-hatmode : b.tech-student : bug-bounty-intern<br><b>$</b> focus --areas<br>owasp-top-10, xss, idor, cors, csp, burp-suite</div>
+</div></section>
+
+<!-- ===== ABOUT ===== -->
+<section id="about"><div class="wrap">
+<h2>About</h2><p class="sub">Student, security tester, aspiring analyst.</p>
+<div class="two">
+<div class="reveal">
+<p>I am a B.Tech student specializing in Artificial Intelligence &amp; Data Science at Priyadarshini College of Engineering, Nagpur (2023&ndash;2027). My interest is in offensive and defensive security, with hands-on exposure to vulnerability research, web application security testing, ethical hacking, network security and penetration testing fundamentals.</p>
+<br>
+<p>I have practised identifying, validating, documenting and responsibly reporting vulnerabilities, including reports submitted through Bugcrowd. I have a foundation in Linux, networking, the OWASP Top 10, Wireshark, Nmap, Burp Suite and OWASP ZAP, and I am seeking an entry-level role where I can keep learning on a real security team.</p>
+</div>
+<div class="stat reveal">
+<div><b>Target roles</b>SOC Analyst / Security Operations, VAPT, Application Security, Web Security</div>
+<div><b>Strongest area</b>Web application security testing &amp; bug bounty research</div>
+<div><b>Education</b>B.Tech AI &amp; Data Science, CGPA 7.19</div>
+</div>
+</div></div></section>
+
+<!-- ===== SKILLS ===== -->
+<section id="skills"><div class="wrap">
+<h2>Skills</h2><p class="sub">Grouped from my resume.</p>
+<div class="grid">
+<div class="card reveal"><h3>Web Security</h3><div class="chips"><span class="chip">OWASP Top 10</span><span class="chip">SQL Injection</span><span class="chip">XSS</span><span class="chip">Broken Authentication</span><span class="chip">IDOR</span><span class="chip">CSRF</span></div></div>
+<div class="card reveal"><h3>Cybersecurity</h3><div class="chips"><span class="chip">Ethical Hacking</span><span class="chip">Web App Security Testing</span><span class="chip">Vulnerability Assessment</span><span class="chip">Pen Testing Fundamentals</span><span class="chip">Bug Hunting</span><span class="chip">Network Security</span></div></div>
+<div class="card reveal"><h3>SOC Fundamentals</h3><div class="chips"><span class="chip">Security Monitoring</span><span class="chip">Incident Response</span><span class="chip">Security Event Analysis</span><span class="chip">Log Monitoring</span><span class="chip">EDR</span><span class="chip">XDR</span><span class="chip">SIEM</span></div></div>
+<div class="card reveal"><h3>Security Tools</h3><div class="chips"><span class="chip">Burp Suite</span><span class="chip">OWASP ZAP</span><span class="chip">sqlmap</span><span class="chip">Nmap</span><span class="chip">Metasploit</span><span class="chip">Wireshark</span><span class="chip">John the Ripper</span><span class="chip">Aircrack-ng</span></div></div>
+<div class="card reveal"><h3>Networking</h3><div class="chips"><span class="chip">TCP/IP</span><span class="chip">OSI Model</span><span class="chip">IPv4/IPv6</span><span class="chip">Subnetting</span><span class="chip">DNS</span><span class="chip">DHCP</span><span class="chip">OSPF</span><span class="chip">BGP</span><span class="chip">Static / Default / Dynamic Routing</span></div></div>
+<div class="card reveal"><h3>Systems &amp; Programming</h3><div class="chips"><span class="chip">Linux</span><span class="chip">Ubuntu</span><span class="chip">Kali Linux</span><span class="chip">Python</span><span class="chip">C</span><span class="chip">C++</span></div></div>
+</div></div></section>
+
+<!-- ===== PROJECTS ===== -->
+<section id="projects"><div class="wrap">
+<h2>Projects</h2><p class="sub">Academic / personal project case study.</p>
+<article class="card reveal">
+<span class="badge">Academic / personal project</span>
+<h3>Password Strength Checker</h3>
+<p class="meta">Python &middot; Password security &middot; Input validation &middot; Brute-force resistance</p>
+<p><strong>Problem:</strong> Weak passwords are easy targets for guessing and brute-force attacks, so users need a quick way to see how strong a password is and how to improve it.</p>
+<p><strong>What I built:</strong> A Python-based tool that evaluates password strength based on length, character diversity and complexity.</p>
+<ul>
+<li>Checks for uppercase letters, lowercase letters, numbers and special characters.</li>
+<li>Classifies passwords as weak, medium or strong.</li>
+<li>Provides recommendations for improving password security.</li>
+</ul>
+<div class="btns"><span class="ph"><a class="btn" href="https://github.com/Anandhatmode/Password_strength_check.git" target="_blank" rel="noopener">Check</a></span></div>
+</article>
+</div></section>
+
+<!-- ===== SECURITY RESEARCH ===== -->
+<section id="research"><div class="wrap">
+<h2>Security Research &amp; Bug Bounty</h2><p class="sub">Responsible disclosure. No sensitive target details are published here.</p>
+<div class="grid">
+<div class="card reveal"><h3>Vulnerability classes</h3><div class="chips"><span class="chip">XSS</span><span class="chip">IDOR</span><span class="chip">CORS misconfiguration</span><span class="chip">CSP bypass</span><span class="chip">Authentication / OTP bypass</span><span class="chip">Data exposure</span></div></div>
+<div class="card reveal"><h3>Reporting</h3><ul><li>Reported findings (CSP bypass, CORS misconfiguration, XSS) through Bugcrowd.</li><li>Documented impact, reproduction steps, affected functionality and recommendations for responsible disclosure.</li></ul><p class="note"><span class="ph"><a class="btn" href="https://www.linkedin.com/posts/anand-hatmode-1b9b81354_cybersecurity-appsec-responsibledisclosure-activity-7374758081181945857-0XMk?utm_source=li_share&utm_content=public_profile__posts&utm_medium=g_dt_web&utm_campaign=copy" target="_blank" rel="noopener">Report</a></span></p></div>
+</div></div></section>
+
+<!-- ===== EXPERIENCE ===== -->
+<section id="experience"><div class="wrap">
+<h2>Experience</h2><p class="sub">Virtual internship.</p>
+<div class="tl"><article class="card reveal">
+<h3>Web Exploit Hunting &amp; Bug Bounty Virtual Intern</h3>
+<p class="meta">EduSkills Academy | AICTE Virtual Internship &middot; Jun 2026 &ndash; Aug 2026</p>
+<ul>
+<li>Completed an 8-week virtual internship focused on web exploit hunting and bug bounty methodologies.</li>
+<li>Practised identifying common web vulnerabilities: SQL Injection, XSS, Broken Authentication, IDOR and CSRF.</li>
+<li>Performed web application security testing using Burp Suite, OWASP ZAP and browser developer tools.</li>
+</ul></article></div>
+</div></section>
+
+<!-- ===== EDUCATION ===== -->
+<section id="education"><div class="wrap">
+<h2>Education</h2><p class="sub">&nbsp;</p>
+<div class="grid">
+<div class="card reveal"><h3>B.Tech, Artificial Intelligence &amp; Data Science</h3><p class="meta">Priyadarshini College of Engineering, Nagpur &middot; 2023 &ndash; 2027</p><p>CGPA: 7.19</p></div>
+<div class="card reveal"><h3>Senior Secondary (XII), Science</h3><p class="meta">Lok Jeevan Junior College Bela &middot; 2021 &ndash; 2022</p><p>Maharashtra State Board of Secondary and Higher Secondary Education</p></div>
+</div></div></section>
+
+<!-- ===== CERTIFICATIONS ===== -->
+<section id="certifications"><div class="wrap">
+<h2>Certifications</h2><p class="sub">&nbsp;</p>
+<div class="grid">
+<div class="card reveal"><h3>Cybersecurity Professional</h3><p class="meta">The Tech Unique Academy (Remote) &middot; Aug 2024 &ndash; Aug 2025</p><p class="note"><span class="ph"><a class="btn" href="https://thetechunique.com/student_certificate/ep-12003617/?trk=public_profile_see-credential" target="_blank" rel="noopener">Link</a></span></p></div>
+<div class="card reveal"><h3>Ethical Hacking</h3><p class="meta">Global Defensive Security (Remote) &middot; Dec 2023 &ndash; May 2024</p><p class="note"><span class="ph"></span></p></div>
+</div></div></section>
+
+<!-- ===== CONTACT ===== -->
+<section id="contact"><div class="wrap">
+<h2>Contact</h2><p class="sub">Open to entry-level cybersecurity opportunities.</p>
+<div class="btns">
+<a class="btn primary" href="mailto:anandhatmode123@gmail.com">Email Me</a>
+<a class="btn" href="https://linkedin.com/in/anand-hatmode-1b9b81354" target="_blank" rel="noopener">LinkedIn</a>
+<a class="btn" href="[ADD GITHUB LINK]" target="_blank" rel="noopener" id="githubBtn">GitHub</a>
+</div>
+<p class="note mono">anandhatmode123@gmail.com &middot; India</p>
+</div></section>
+</main>
+
+<footer><div class="wrap">&copy; <span id="year"></span> Anand Hatmode. Built for entry-level cybersecurity roles.</div></footer>
+
+<script>
+document.body.classList.remove('nojs');
+document.getElementById('year').textContent=new Date().getFullYear();
+// Mobile menu
+const burger=document.getElementById('burger'),menu=document.getElementById('menu');
+burger.addEventListener('click',()=>{const o=menu.classList.toggle('open');burger.setAttribute('aria-expanded',o)});
+menu.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{menu.classList.remove('open');burger.setAttribute('aria-expanded',false)}));
+// Scroll reveal
+const io=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting){x.target.classList.add('in');io.unobserve(x.target)}}),{threshold:.12});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+// Active nav state
+const links=[...menu.querySelectorAll('a')];
+const so=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting){links.forEach(l=>l.classList.toggle('active',l.getAttribute('href')==='#'+x.target.id))}}),{rootMargin:'-45% 0px -50% 0px'});
+document.querySelectorAll('main section[id]').forEach(s=>so.observe(s));
+// Hide GitHub button until a real link is added
+const gh=document.getElementById('githubBtn');
+if(gh.getAttribute('href').includes('ADD GITHUB'))gh.style.display='none';
+</script>
+</body>
+</html>
